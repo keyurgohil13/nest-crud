@@ -11,5 +11,8 @@ export class EmployeeService {
         return this.employeeRepo.find();
     }
 
+    create(newEmployee){
+        return this.employeeRepo.insert(newEmployee);
+    }
 }
 

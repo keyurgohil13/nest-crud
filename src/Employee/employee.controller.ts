@@ -1,4 +1,4 @@
-import { Controller , Get } from "@nestjs/common";
+import { Controller , Get , Post , Body, HttpCode} from "@nestjs/common";
 import { EmployeeService } from "./employee.service";
 import { Employee } from "./employee.entity";
 
@@ -13,4 +13,13 @@ export class EmployeeController {
         
         return await this.employeeService.findAll();
     } 
+
+    @Post('add')
+    @HttpCode(201)
+    async createEmployee(@Body() newEmployee:any){
+
+        console.log(newEmployee);
+        
+        return this.employeeService.create(newEmployee);
+    }
 }
