@@ -14,7 +14,9 @@ import { EmployeeModule } from './Employee/employee.module';
       username : 'postgres',
       password : '123456789',
       database : 'nest-crud',
-      entities : [Employee]
+      logging : true,
+      synchronize : true,
+      entities : [Employee],
     }),
     EmployeeModule
   ],
